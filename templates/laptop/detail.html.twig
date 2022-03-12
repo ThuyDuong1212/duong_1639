@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="container col-md-8 mt-4">
+    <div class="row">
+        <div class="col mt-5 text-center">
+            <h1 class="text text-danger">{{ laptop }}</h1>
+                <h2 class="text text-primary">Price: {{ laptop.price }} VND</h2>
+                <h2 class="text text-primary">Color: {{ laptop.color }}</h2>
+        </div>
+    </div>
+</div>
+{% endblock %}

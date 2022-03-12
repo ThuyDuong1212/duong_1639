@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container col-md-8 text-center mt-4">
+    <a class="btn btn-success" href="{{ path('laptop_add') }}">
+        ADD
+    </a>
+    <table class="table table-bordered mt-3">
+        <tr>
+            <th>Id</th>
+            <th>Laptop name</th>
+            <th>Menu</th>
+        </tr>
+        {% for laptop in laptops %}
+            <tr>
+            <td>{{ laptop.id }}</td>
+            <td>
+                <a href="{{ path('laptop_detail', {'id' : laptop.id })}}">
+                    {{ laptop.name }}
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-warning" href="{{ path('laptop_edit', {'id' : laptop.id })}}">
+                    EDIT
+                </a>
+                <a class="btn btn-danger" href="{{ path('laptop_delete', {'id' : laptop.id })}}">
+                    DELETE
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+        
+    </table>
+</div>
+{% endblock %}
